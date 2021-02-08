@@ -1,0 +1,29 @@
+@import "../../styles/";
+
+.error-container {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: 0.5;
+    }
+    
+    .error-pop-up {
+        width: 300px;
+        height: 100px;
+        background-color: white;
+        border: 2px solid $accent-primary;
+        border-radius: 10px;
+        padding: 50px; 
+        z-index: 2;
+    }
+}

@@ -1,0 +1,92 @@
+@import "./colors.scss";
+
+@mixin flexbox() {
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: -ms-flexbox !important;
+  display: -webkit-flex !important;
+  display: flex !important;
+}
+
+
+@mixin font-regular($font-size: 16px) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $font-size;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction !important;
+     -moz-flex-direction: $direction !important;
+      -ms-flex-direction: $direction !important;
+          flex-direction: $direction !important;
+}
+
+
+@mixin justify-content($justify: center) {
+  -webkit-justify-content: $justify !important;
+     -moz-justify-content: $justify !important;
+      -ms-justify-content: $justify !important;
+          justify-content: $justify !important;
+            -ms-flex-pack: $justify !important;
+}
+
+
+@mixin align-content($align: center) {
+  -webkit-align-content: $align !important;
+     -moz-align-content: $align !important;
+      -ms-align-content: $align !important;
+          align-content: $align !important;
+}
+
+
+@mixin align-items($align: center) {
+  -webkit-align-items: $align !important;
+     -moz-align-items: $align !important;
+      -ms-align-items: $align !important;
+       -ms-flex-align: $align !important;
+          align-items: $align !important;
+}
+
+
+@mixin align-self($align: center) {
+  -webkit-align-self: $align !important;
+     -moz-align-self: $align !important;
+      -ms-align-self: $align !important;
+          align-self: $align !important;
+}
+
+@mixin noselect() {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+@mixin box-shadow($h_offset: 2px, $v_offset: 2px, $blur: 4px, $spread: 0, $color: $shadow-grey) {
+  -webkit-box-shadow: $h_offset $v_offset $blur $spread $color;
+     -moz-box-shadow: $h_offset $v_offset $blur $spread $color;
+          box-shadow: $h_offset $v_offset $blur $spread $color;
+}
+
+@mixin hide-arrow-number-input() {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

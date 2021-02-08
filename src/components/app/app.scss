@@ -1,0 +1,12 @@
+@import "../../styles/";
+
+.app {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include font-regular();
+
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-primary;
+}
