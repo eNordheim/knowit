@@ -1,4 +1,3 @@
-import RepositoryTableMapper from '../../utils/repositoryTableMapper';
 import { FETCH_REPOSITORY_LIST_ERROR, FETCH_REPOSITORY_LIST_REQUEST, FETCH_REPOSITORY_LIST_SUCCESS } from '../actions/repositoryActions';
 
 const intitialState = {
@@ -17,7 +16,7 @@ function RepositoryReducer(prevState = intitialState, action) {
         case FETCH_REPOSITORY_LIST_SUCCESS:
             return {
                 ...intitialState,
-                pages: RepositoryTableMapper(action.payload.items),
+                pages: action.payload.items,
             };
         case FETCH_REPOSITORY_LIST_ERROR:
             return {
