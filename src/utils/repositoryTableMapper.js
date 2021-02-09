@@ -1,4 +1,4 @@
-const MAX_COUNTER = 20;
+const MAX_COUNTER = 10;
 
 export default function RepositoryTableMapper(items) {
     const processedData = [];

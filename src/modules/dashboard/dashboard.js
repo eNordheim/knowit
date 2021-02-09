@@ -1,8 +1,9 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import Table from '../../components/table/table';
 import Spinner from '../../components/spinner/spinner';
+import Table from '../../components/table/table';
 import { fetchRepositoryRequest } from '../../redux/actions/repositoryActions';
 import './dashboard.scss';
 import repositoryTableDataShape from '../../constants/shapes/repositoryTableData';
@@ -32,6 +33,22 @@ function Dashboard({ isFetching, items, errorMessage }) {
         return (<Spinner />);
     }
 
+    const pagingCssClass = index => {
+        if (paging - 1 === index || paging + 1 === index) { return ''; }
+        if (paging === index) { return 'active'; }
+        return 'hidden';
+    };
+
+    const pagingList = items.map((item, index) => (
+        <button
+            className={pagingCssClass(index)}
+            onClick={() => setPaging(index)}
+            key={`paging-number-${index}`}
+        >
+            {index + 1}
+        </button>
+    ));
+
     return (
         <div className="dashboard-container">
             <div className="dashboard-card">
@@ -41,6 +58,7 @@ function Dashboard({ isFetching, items, errorMessage }) {
 
                     <div className="button-row">
                         <button onClick={() => decrement()} disabled={paging === 0}>prev</button>
+                        {pagingList}
                         <button onClick={() => increment()} disabled={paging === items.length - 1}>next</button>
                     </div>
                 </div>

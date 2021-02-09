@@ -4,7 +4,6 @@
     @include flexbox();
     color: $font-primary;
     max-width: 1000px;
-    max-height: 600px;
     height: 100%;
     width: 100%;
     background-color: $background-secondary;
@@ -27,6 +26,15 @@
         @include flexbox();
         @include justify-content(flex-end);
         margin-top: 40px;
+
+        .active {
+            background-color: $accent-primary;
+        }
+
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
 
         button {
             height: 25px;
